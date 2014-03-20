@@ -18,7 +18,7 @@ $(document).ready(function(){
 	$('.marker').click(function(){
 		
 		// finding location of this marker (four quadrants to determine where popup goes)
-	   var marker_pos = $(this).position();
+	   var marker_pos = $(this).parent().position();
 	   
 	   // get container height and width for four quadrants
 	   var container_h = $("#container").height();
@@ -30,10 +30,10 @@ $(document).ready(function(){
 			
 		// get height and width of marker for lines to be centered
 		var marker_h = $(this).height();
-			var marker_hh = marker_h / 2;
+			var marker_hh = marker_h / -2;
 			
 		var marker_w = $(this).width();
-			var marker_hw = marker_w / 2;
+			var marker_hw = marker_w / -2;
 	   
 	   
 	   // close any content boxes already open
