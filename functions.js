@@ -56,14 +56,14 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2)})
+			$(this).next('.line1').css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2),"height":2})
 			.show("slide",{ direction: "left" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":marker_h})
+				$(this).next('.line2').css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":marker_h,"width":2})
 				.show("slide",{ direction: "up" },"slow", function(){
 					
 					var line2_w = $(this).width();
@@ -88,14 +88,14 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"right":(marker_w * -2),"top":(marker_h / 2),"width":(content_w / 2)})
+			$(this).next('.line1').css({"right":(marker_w * -2),"top":(marker_h / 2),"width":(content_w / 2),"height":2})
 			.show("slide",{ direction: "right" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"right":-(marker_w * 2),"top":(marker_h / 2),"height":marker_h})
+				$(this).next('.line2').css({"right":-(marker_w * 2),"top":(marker_h / 2),"height":marker_h,"width":2})
 				.show("slide",{ direction: "up" },"slow", function(){
 					
 					var line2_w = $(this).width();
@@ -120,21 +120,21 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":marker_w,"bottom":(marker_h / 2),"width":(content_w / 2)})
-			.show("slide",{ direction: "left" },"slow", function(){
+			$(this).next('.line1').css({"left":(marker_w / 2),"bottom":(marker_h * 2),"height":marker_h,"width":2})
+			.show("slide",{ direction: "down" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"left":(marker_w + line1_w -2),"bottom":(marker_h * 1.5),"height":marker_h})
-				.show("slide",{ direction: "down" },"slow", function(){
+				$(this).next('.line2').css({"left":(marker_w / 2),"bottom":((marker_h * 2) + line1_h),"width":marker_w,"height":2})
+				.show("slide",{ direction: "left" },"slow", function(){
 					
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"left":(marker_w),"bottom":(marker_h * 7)} )
+					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":((marker_h * 2) + line1_h)} )
 					.show("slide",{ direction: "left" },"slow")
 
 				});
@@ -152,14 +152,14 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2),"height":2})
 			.show("slide",{ direction: "left" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h,"width":2})
 				.show("slide",{ direction: "up" },"slow", function(){
 					
 					var line2_w = $(this).width();
