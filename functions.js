@@ -88,21 +88,21 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"right":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			$(this).next('.line1').css({"right":-(marker_w * 2),"top":(marker_h / 2),"width":(content_w / 2)})
 			.show("slide",{ direction: "right" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"right":(-line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				$(this).next('.line2').css({"right":-(marker_w * 2),"top":(marker_h / 2),"height":marker_h})
 				.show("slide",{ direction: "up" },"slow", function(){
 					
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"right":(line1_w),"top":(line2_h / -2)-line1_h} )
+					$(this).next('.content').css({"right":marker_w,"top":(marker_w / 2)})
 					.show("slide",{ direction: "up" },"slow")
 
 				});
