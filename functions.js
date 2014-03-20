@@ -37,17 +37,14 @@ $(document).ready(function(){
 	   
 	   
 	   // close any content boxes already open
-		/*$('.active').next().slideUp("fast","linear", function() {
-			$(this).next().slideUp("fast","linear", function() {
-				$(this).next().slideUp("fast","linear");
-			});
-		});*/
-		
+	   // need to reverse order...
+	   // also make unique direction to each quadrant
 		$('.active').next().slideUp("fast","linear", function() {
 			$(this).next().slideUp("fast","linear", function() {
 				$(this).next().slideUp("fast","linear");
 			});
 		});
+		
 
 		// get content width to determine width of line1
 		var content_w = $('.content').width();
@@ -90,11 +87,28 @@ $(document).ready(function(){
 			console.log("top right");
 
 			// toggle lines and content opening/closing
-			$(this).next('.line1').show("slide",{ direction: "right" },"slow", function(){
-				$(this).next('.line2').show("slide",{ direction: "up" },"slow", function(){
-					$(this).next('.content').show("slide",{ direction: "up" },"slow")
+			// line1 
+			$(this).next('.line1').css({"right":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			.show("slide",{ direction: "right" },"slow", function(){
+				
+				var line1_w = $(this).width();
+				var line1_h = $(this).height();
+				
+				// line2
+				$(this).next('.line2').css({"right":(-line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				.show("slide",{ direction: "up" },"slow", function(){
+					
+					var line2_w = $(this).width();
+					var line2_h = $(this).height();
+					
+					// content
+					$(this).next('.content').css({"right":(line1_w),"top":(line2_h / -2)-line1_h} )
+					.show("slide",{ direction: "up" },"slow")
+
 				});
+				
 			});
+			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
 		};
@@ -105,11 +119,28 @@ $(document).ready(function(){
 			console.log("bottom left");
 
 			// toggle lines and content opening/closing
-			$(this).next('.line1').show("slide",{ direction: "left" },"slow", function(){
-				$(this).next('.line2').show("slide",{ direction: "down" },"slow", function(){
-					$(this).next('.content').show("slide",{ direction: "down" },"slow")
+			// line1 
+			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			.show("slide",{ direction: "left" },"slow", function(){
+				
+				var line1_w = $(this).width();
+				var line1_h = $(this).height();
+				
+				// line2
+				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				.show("slide",{ direction: "up" },"slow", function(){
+					
+					var line2_w = $(this).width();
+					var line2_h = $(this).height();
+					
+					// content
+					$(this).next('.content').css({"left":(line1_w),"top":(line2_h / -2)-line1_h} )
+					.show("slide",{ direction: "up" },"slow")
+
 				});
+				
 			});
+			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
 		};
@@ -120,11 +151,28 @@ $(document).ready(function(){
 			console.log("bottom right");
 
 			// toggle lines and content opening/closing
-			$(this).next('.line1').show("slide",{ direction: "right" },"slow", function(){
-				$(this).next('.line2').show("slide",{ direction: "down" },"slow", function(){
-					$(this).next('.content').show("slide",{ direction: "down" },"slow")
+			// line1 
+			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			.show("slide",{ direction: "left" },"slow", function(){
+				
+				var line1_w = $(this).width();
+				var line1_h = $(this).height();
+				
+				// line2
+				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				.show("slide",{ direction: "up" },"slow", function(){
+					
+					var line2_w = $(this).width();
+					var line2_h = $(this).height();
+					
+					// content
+					$(this).next('.content').css({"left":(line1_w),"top":(line2_h / -2)-line1_h} )
+					.show("slide",{ direction: "up" },"slow")
+
 				});
+				
 			});
+			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
 		};
