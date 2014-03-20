@@ -10,6 +10,7 @@
 	position: relative;
 }
 
+
 .marker {
 	height: 50px;
 	width: 50px;
@@ -22,7 +23,7 @@
 }
 	#marker1 {
 		position: absolute;
-		top: 10px;
+		top: 50px;
 		left: 10px;
 	}
 	#marker2 {
