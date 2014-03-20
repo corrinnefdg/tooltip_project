@@ -30,10 +30,10 @@ $(document).ready(function(){
 			
 		// get height and width of marker for lines to be centered
 		var marker_h = $(this).height();
-			var marker_hh = marker_h / -2;
+			var marker_hh = marker_h / 2;
 			
 		var marker_w = $(this).width();
-			var marker_hw = marker_w / -2;
+			var marker_hw = marker_w / 2;
 	   
 	   
 	   // close any content boxes already open
@@ -70,7 +70,7 @@ $(document).ready(function(){
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"left":(line1_w),"top":(line2_h / -2)-line1_h} )
+					$(this).next('.content').css({"left":(line1_w),"top":(marker_w / 2)} )
 					.show("slide",{ direction: "up" },"slow")
 
 				});
