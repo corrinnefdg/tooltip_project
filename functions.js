@@ -56,21 +56,21 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			$(this).next('.line1').css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2)})
 			.show("slide",{ direction: "left" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h})
+				$(this).next('.line2').css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":marker_h})
 				.show("slide",{ direction: "up" },"slow", function(){
 					
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"left":(line1_w),"top":(marker_w / 2)} )
+					$(this).next('.content').css({"left":(marker_w),"top":(marker_h / 2)} )
 					.show("slide",{ direction: "up" },"slow")
 
 				});
@@ -83,12 +83,12 @@ $(document).ready(function(){
 
 	   
 	   // top right quadrant
-		if( (marker_pos.left >  container_hw) && (marker_pos.top < container_hh) ){
+		if( (marker_pos.left > container_hw) && (marker_pos.top < container_hh) ){
 			console.log("top right");
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"right":-(marker_w * 2),"top":(marker_h / 2),"width":(content_w / 2)})
+			$(this).next('.line1').css({"right":(marker_w * -2),"top":(marker_h / 2),"width":(content_w / 2)})
 			.show("slide",{ direction: "right" },"slow", function(){
 				
 				var line1_w = $(this).width();
@@ -102,7 +102,7 @@ $(document).ready(function(){
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"right":marker_w,"top":(marker_w / 2)})
+					$(this).next('.content').css({"right":marker_w,"top":(marker_h / 2)})
 					.show("slide",{ direction: "up" },"slow")
 
 				});
@@ -115,27 +115,27 @@ $(document).ready(function(){
 		
 		
 		// bottom left quadrant
-	   if( (marker_pos.left <  container_hw) && (marker_pos.top > container_hh) ){
+	   if( (marker_pos.left < container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom left");
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":marker_w,"top":marker_hh,"width":(content_w / 2)})
+			$(this).next('.line1').css({"left":marker_w,"bottom":(marker_h / 2),"width":(content_w / 2)})
 			.show("slide",{ direction: "left" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"left":(marker_w + line1_w),"top":marker_hh-line1_h,"height":marker_h})
-				.show("slide",{ direction: "up" },"slow", function(){
+				$(this).next('.line2').css({"left":(marker_w + line1_w -2),"bottom":(marker_h * 1.5),"height":marker_h})
+				.show("slide",{ direction: "down" },"slow", function(){
 					
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"left":(line1_w),"top":(line2_h / -2)-line1_h} )
-					.show("slide",{ direction: "up" },"slow")
+					$(this).next('.content').css({"left":(marker_w),"bottom":(marker_h * 7)} )
+					.show("slide",{ direction: "left" },"slow")
 
 				});
 				
@@ -147,7 +147,7 @@ $(document).ready(function(){
 		
 		
 		// bottom right quadrant
-	   if( (marker_pos.left >  container_hw) && (marker_pos.top > container_hh) ){
+	   if( (marker_pos.left > container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom right");
 
 			// toggle lines and content opening/closing
