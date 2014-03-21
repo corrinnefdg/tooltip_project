@@ -39,6 +39,13 @@ $(document).ready(function(){
 	   // close any content boxes already open
 	   // need to reverse order...
 	   // also make unique direction to each quadrant
+		/* $('.active').next().slideUp("fast","linear", function() {
+			$(this).next().slideUp("fast","linear", function() {
+				$(this).next().slideUp("fast","linear");
+			});
+		}); */
+		
+		
 		$('.active').next().slideUp("fast","linear", function() {
 			$(this).next().slideUp("fast","linear", function() {
 				$(this).next().slideUp("fast","linear");
@@ -52,6 +59,11 @@ $(document).ready(function(){
 		// top left quadrant
 		if( (marker_pos.left < container_hw) && (marker_pos.top < container_hh) ){
 			console.log("top left");
+			
+			var content_h = $(this).nextAll('.content').height();
+			console.log(content_h);
+			var content_w = $(this).nextAll('.content').width();
+			console.log(content_w);
 
 			// toggle lines and content opening/closing
 			// line1 
@@ -70,7 +82,7 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"left":(marker_w),"top":(marker_h / 2)} )
-					.show("slide",{ direction: "up" },"slow")
+					.show("slide",{ direction: "up" },"slow");
 
 				});
 				
@@ -84,6 +96,11 @@ $(document).ready(function(){
 	   // top right quadrant
 		if( (marker_pos.left > container_hw) && (marker_pos.top < container_hh) ){
 			console.log("top right");
+			
+			var content_h = $(this).nextAll('.content').height();
+			console.log(content_h);
+			var content_w = $(this).nextAll('.content').width();
+			console.log(content_w);
 
 			// toggle lines and content opening/closing
 			// line1 
@@ -102,7 +119,7 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"right":(line1_w + marker_w),"top":(marker_h / 2)})
-					.show("slide",{ direction: "up" },"slow")
+					.show("slide",{ direction: "up" },"slow");
 
 				});
 				
@@ -116,11 +133,17 @@ $(document).ready(function(){
 		// bottom left quadrant
 	   if( (marker_pos.left < container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom left");
+			
+			var content_h = $(this).nextAll('.content').height();
+			console.log(content_h);
+			var content_w = $(this).nextAll('.content').width();
+			console.log(content_w);
 
 			// toggle lines and content opening/closing
 			// line1 
 			$(this).next('.line1').css({"left":(marker_w / 2),"bottom":(marker_h),"height":marker_h,"width":2})
 			.show("slide",{ direction: "down" },"slow", function(){
+				
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
@@ -132,9 +155,12 @@ $(document).ready(function(){
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
+					//var content_h = $(this).next().height();
+					//console.log(content_h);
+					
 					// content
-					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h + line1_h)} )
-					.show("slide",{ direction: "left" },"slow")
+					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h + line1_h)})
+					.show("slide",{ direction: "left" },"slow");
 
 				});
 				
@@ -148,6 +174,11 @@ $(document).ready(function(){
 		// bottom right quadrant
 	   if( (marker_pos.left > container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom right");
+			
+			var content_h = $(this).nextAll('.content').height();
+			console.log(content_h);
+			var content_w = $(this).nextAll('.content').width();
+			console.log(content_w);
 
 			// toggle lines and content opening/closing
 			// line1 
@@ -166,7 +197,7 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"right":((marker_w / 2) + line2_w),"bottom":((marker_h * 2) + line1_h)} )
-					.show("slide",{ direction: "right" },"slow")
+					.show("slide",{ direction: "right" },"slow");
 
 				});
 				
