@@ -39,22 +39,19 @@ $(document).ready(function(){
 	   // close any content boxes already open
 	   // need to reverse order...
 	   // also make unique direction to each quadrant
-		/* $('.active').next().slideUp("fast","linear", function() {
-			$(this).next().slideUp("fast","linear", function() {
-				$(this).next().slideUp("fast","linear");
-			});
-		}); */
-		
-		
 		$('.active').next().slideUp("fast","linear", function() {
 			$(this).next().slideUp("fast","linear", function() {
 				$(this).next().slideUp("fast","linear");
 			});
-		});
+		}); 
 		
+		// trying to reverse the closing order
+		/*$('.active').nextAll('.content').slideUp("slow","linear", function() {
+			$('.active').nextAll('.line2').slideUp("slow","linear", function() {
+				$('.active').nextAll('.line1').slideUp("slow","linear");
+			});
+		});*/
 
-		// get content width to determine width of line1
-		var content_w = $('.content').width();
 
 		// top left quadrant
 		if( (marker_pos.left < container_hw) && (marker_pos.top < container_hh) ){
@@ -141,7 +138,7 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"left":(marker_w / 2),"bottom":(marker_h),"height":marker_h,"width":2})
+			$(this).next('.line1').css({"left":(marker_w / 2),"bottom":(marker_h),"height":(content_h / 2),"width":2})
 			.show("slide",{ direction: "down" },"slow", function(){
 				
 				
@@ -155,11 +152,8 @@ $(document).ready(function(){
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
-					//var content_h = $(this).next().height();
-					//console.log(content_h);
-					
 					// content
-					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h + line1_h)})
+					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":(content_h / 2)})
 					.show("slide",{ direction: "left" },"slow");
 
 				});
@@ -182,21 +176,21 @@ $(document).ready(function(){
 
 			// toggle lines and content opening/closing
 			// line1 
-			$(this).next('.line1').css({"right":(marker_w / 2),"bottom":(marker_h * 2),"height":marker_h,"width":2})
+			$(this).next('.line1').css({"right":(marker_w / 2),"bottom":(marker_h),"height":content_h,"width":2})
 			.show("slide",{ direction: "down" },"slow", function(){
 				
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
 				// line2
-				$(this).next('.line2').css({"right":(marker_w / 2),"bottom":((marker_h * 2) + line1_h),"width":marker_w,"height":2})
+				$(this).next('.line2').css({"right":((marker_w / 2) + marker_w),"bottom":(line1_h + marker_h),"width":marker_w,"height":2})
 				.show("slide",{ direction: "right" },"slow", function(){
 					
 					var line2_w = $(this).width();
 					var line2_h = $(this).height();
 					
 					// content
-					$(this).next('.content').css({"right":((marker_w / 2) + line2_w),"bottom":((marker_h * 2) + line1_h)} )
+					$(this).next('.content').css({"right":(line2_w),"bottom":(content_h / 2)} )
 					.show("slide",{ direction: "right" },"slow");
 
 				});
