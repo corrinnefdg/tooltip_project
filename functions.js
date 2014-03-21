@@ -41,9 +41,9 @@ $(document).ready(function(){
         // also make unique direction to each quadrant
         if ($(this).hasClass('active')) return;
       
-		$('.active').next().slideUp("fast","linear", function() {
-			$(this).next().slideUp("fast","linear", function() {
-				$(this).next().slideUp("fast","linear");
+		$('.closeBox').fadeOut("fast","linear", function() {
+			$(this).prev().fadeOut("fast","linear", function() {
+				$(this).prev().fadeOut("fast","linear");
 			});
 		}); 
 		
@@ -81,7 +81,8 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"left":(marker_w),"top":((marker_h / 2) + line2_h)} )
-					.show("slide",{ direction: "up" },"slow");
+					.show("slide",{ direction: "up" },"slow")
+                    .addClass("closeBox");
 
 				});
 				
@@ -118,7 +119,8 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"right":(marker_w),"top":((marker_h / 2) + line2_h)})
-					.show("slide",{ direction: "up" },"slow");
+					.show("slide",{ direction: "up" },"slow")
+                    .addClass("closeBox");
 
 				});
 				
@@ -156,7 +158,8 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h)})
-					.show("slide",{ direction: "left" },"slow");
+					.show("slide",{ direction: "left" },"slow")
+                    .addClass("closeBox");
 
 				});
 				
@@ -193,7 +196,8 @@ $(document).ready(function(){
 					
 					// content
 					$(this).next('.content').css({"right":((marker_w / 2) + line2_w),"bottom":(marker_h)} )
-					.show("slide",{ direction: "right" },"slow");
+					.show("slide",{ direction: "right" },"slow")
+                    .addClass("closeBox");
 
 				});
 				
