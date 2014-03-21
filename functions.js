@@ -18,14 +18,14 @@ $(document).ready(function(){
 	$('.marker').click(function(){
 		
 		// finding location of this marker (four quadrants to determine where popup goes)
-	   var marker_pos = $(this).parent().position();
-	   
-	   // get container height and width for four quadrants
-	   var container_h = $("#container").height();
-	   		var container_hh = container_h / 2;
+       var marker_pos = $(this).parent().position();
+
+      // get container height and width for four quadrants
+      var container_h = $("#container").height();
+          var container_hh = container_h / 2;
 			
-	   var container_w = $("#container").width();
-	   		var container_hw = container_w / 2;
+      var container_w = $("#container").width();
+          var container_hw = container_w / 2;
 			
 			
 		// get height and width of marker for lines to be centered
@@ -34,11 +34,13 @@ $(document).ready(function(){
 			
 		var marker_w = $(this).width();
 			var marker_hw = marker_w / 2;
-	   
-	   
-	   // close any content boxes already open
-	   // need to reverse order...
-	   // also make unique direction to each quadrant
+
+
+        // close any content boxes already open
+        // need to reverse order...
+        // also make unique direction to each quadrant
+		if ($(this).hasClass('active')) return;
+		
 		$('.active').next().slideUp("fast","linear", function() {
 			$(this).next().slideUp("fast","linear", function() {
 				$(this).next().slideUp("fast","linear");
@@ -87,10 +89,10 @@ $(document).ready(function(){
 			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
-		};
+		}
 
-	   
-	   // top right quadrant
+
+        // top right quadrant
 		if( (marker_pos.left > container_hw) && (marker_pos.top < container_hh) ){
 			console.log("top right");
 			
@@ -124,11 +126,11 @@ $(document).ready(function(){
 			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
-		};
+		}
 		
 		
 		// bottom left quadrant
-	   if( (marker_pos.left < container_hw) && (marker_pos.top > container_hh) ){
+        if( (marker_pos.left < container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom left");
 			
 			var content_h = $(this).nextAll('.content').height();
@@ -162,11 +164,11 @@ $(document).ready(function(){
 			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
-		};
+		}
 		
 		
 		// bottom right quadrant
-	   if( (marker_pos.left > container_hw) && (marker_pos.top > container_hh) ){
+        if( (marker_pos.left > container_hw) && (marker_pos.top > container_hh) ){
 			console.log("bottom right");
 			
 			var content_h = $(this).nextAll('.content').height();
@@ -199,8 +201,8 @@ $(document).ready(function(){
 			
 			$('.active').removeClass('active');
 			$(this).addClass("active");
-		};
-	   
+		}
+
 	}); // end on click
 	
 	
