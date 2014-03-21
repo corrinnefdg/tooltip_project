@@ -1,16 +1,6 @@
 // JavaScript Document
 
-// slide elements sideways
-// http://www.learningjquery.com/2009/02/slide-elements-in-different-directions/
-// http://api.jqueryui.com/slide-effect/
-
-// syntax
-//.show("slide","linear","fast", function(){ });
-//.show("slide",{ direction: "left" },"linear","fast", function(){ });
-
-// add CSS
-// $("p").css({"background-color":"yellow","font-size":"200%"});
-
+// http://jsbin.com/cokeb/13/edit
 
 $(document).ready(function(){
 
@@ -35,10 +25,15 @@ $(document).ready(function(){
 		var marker_w = $(this).width();
 			var marker_hw = marker_w / 2;
 
+      
+        // adding the overlay
+        var overlay = jQuery('<div id="overlay"> </div>');
+        overlay.appendTo('#container');
+        //$('#container').addClass("overlay");
+      
 
         // close any content boxes already open
-        // need to reverse order...
-        // also make unique direction to each quadrant
+        // need to make unique direction to each quadrant
         if ($(this).hasClass('active')) return;
       
 		$('.closeBox').fadeOut("fast","linear", function() {
@@ -46,13 +41,6 @@ $(document).ready(function(){
 				$(this).prev().fadeOut("fast","linear");
 			});
 		}); 
-		
-		// trying to reverse the closing order
-		/*$('.active').nextAll('.content').slideUp("slow","linear", function() {
-			$('.active').nextAll('.line2').slideUp("slow","linear", function() {
-				$('.active').nextAll('.line1').slideUp("slow","linear");
-			});
-		});*/
 
 
 		// top left quadrant
@@ -69,6 +57,8 @@ $(document).ready(function(){
 			$(this).next('.line1').css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2),"height":2})
 			.show("slide",{ direction: "left" },"slow", function(){
 				
+            
+              
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 				
@@ -212,12 +202,13 @@ $(document).ready(function(){
 	
 	// close popup when "close" button clicked
 	$('.close').click(function(e){
-		// prevent window from refreshing when link clinked
 		e.preventDefault();
-		
-		// close popup/content window
-		// needs to be fixed to go backwards (callback functions)
-		$('.popup').slideUp("slow","linear");
+      
+        $('.closeBox').fadeOut("fast","linear", function() {
+			$(this).prev().fadeOut("fast","linear", function() {
+				$(this).prev().fadeOut("fast","linear");
+			});
+		}); 
 	});
 	// close popup when overlay is clicked
 		
