@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Hotspot Test</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+<script src="functions.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
 <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
   <meta charset="utf-8">
   <title>JS Bin</title>
 </head>
+
 <body>
-  
-  <main id="container">
-    
-    
-        <section id="section1">
-            <div class="marker" id="marker1">
-                <p>Click me</p>
-            </div>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="content">
-                <p><a href="" class="close">Close</a></p> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
-            </div>
-        </section>
-        
-            
-        <section id="section2">
-            <div class="marker" id="marker2">
-                <p>Click me</p>
-            </div>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="content">
-                <p><a href="" class="close">Close</a></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
-            </div>
-        </section>
-        
-        
-        <section id="section3">
-            <div class="marker" id="marker3">
-                <p>Click me</p>
-            </div>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="content">
-                <p><a href="" class="close">Close</a></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
-            </div>
-        </section>
-        
-        
-        <section id="section4">
-            <div class="marker" id="marker4">
-                <p>Click me</p>
-            </div>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="content">
-                <p><a href="" class="close">Close</a></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Mauris non risus non nibh sodales condimentum.</p>
-            </div>
-        </section>
- 
-        
-    </main><!-- end container -->
+
+		<main id="container">
+			<div id="overlay"></div>
+			<section id="section1">
+				<div class="marker" id="marker1">
+					<p>Click me</p>
+				</div>
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="content">
+					<p><a href="" class="close">Close</a></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
+				</div>
+			</section>
+
+			<section id="section2">
+				<div class="marker" id="marker2">
+					<p>Click me</p>
+				</div>
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="content">
+					<p><a href="" class="close">Close</a></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
+				</div>
+			</section>
+
+			<section id="section3">
+				<div class="marker" id="marker3">
+					<p>Click me</p>
+				</div>
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="content">
+					<p><a href="" class="close">Close</a></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum.</p>
+				</div>
+			</section>
+
+			<section id="section4">
+				<div class="marker" id="marker4">
+					<p>Click me</p>
+				</div>
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="content">
+					<p><a href="" class="close">Close</a></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque nulla non adipiscing aliquet. Sed sit amet justo lobortis, porttitor dui vitae, ultricies sapien. Vestibulum tincidunt ac urna non accumsan. Morbi sed metus varius nulla feugiat scelerisque. Cras id lorem quis libero euismod pretium. Duis in faucibus nisl. Sed a malesuada elit, in tristique diam. Mauris non risus non nibh sodales condimentum. Mauris non risus non nibh sodales condimentum.</p>
+				</div>
+			</section>
+		</main><!-- end container -->
 
 </body>
+</html>
 </html>

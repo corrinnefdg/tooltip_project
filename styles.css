@@ -7,79 +7,76 @@
 	width: 500px;
 	border: 1px solid black;
 	overflow: none;
-    position: relative;
+	position: relative;
 }
 
-    #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        filter:alpha(opacity=50);
-        -moz-opacity:0.5;
-        -khtml-opacity: 0.5;
-        opacity: 0.5;
-        z-index: 10;
-    }
+	#overlay {
+		background: rgba(0,0,0,.5);
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		display:none;
+		z-index: 9;
+	}
 
 	.marker {
 		height: 50px;
 		width: 50px;
-		background-color: lightgray;
+		background-color: green;
 		display: inline-block;
 		margin: 0;
 		padding: 0;
 		font-size: 0;
-	    z-index: 50;
+		z-index: 50;
 	}
 		#section1 {
 			position: absolute;
-            top: 20px;
-            left: 20px;
+			top: 20px;
+			left: 20px;
 		}
 			#marker1 {
 				position: absolute;
 				top: 0;
 				left: 0;
 			}
-		
+
 		#section2 {
 			position: absolute;
-            top: 20px;
-            right: 20px;
+			top: 20px;
+			right: 20px;
 		}
 			#marker2 {
 				position: absolute;
 				top: 0;
 				right: 0;
 			}
-			
+
 		#section3 {
 			position: absolute;
-            bottom: 20px;
-            left: 20px;
+			bottom: 20px;
+			left: 20px;
 		}
 			#marker3{
 				position: absolute;
 				bottom: 0;
 				left: 0;
 			}
-			
+
 		#section4 {
 			position: absolute;
-            bottom: 20px;
-            right: 20px;
+			bottom: 20px;
+			right: 20px;
 		}
 			#marker4{
 				position: absolute;
 				bottom: 0;
 				right: 0;
 			}
-			
-	
-	
+
+
+
 		.line1 {
 			display: none;
 			background-color: blue;
@@ -102,7 +99,7 @@
 		}
 		.content {
 			display: none;
-			background-color: gray;
+			background-color: lightgray;
 			width: 300px;
 			margin: 0;
 			position: absolute;
