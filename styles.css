@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@font-face {font-family: 'SoinSansPro-Roman';src: url('fonts/2A5729_3_0.eot');src: url('fonts/2A5729_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/2A5729_3_0.woff') format('woff'),url('fonts/2A5729_3_0.ttf') format('truetype'),url('fonts/2A5729_3_0.svg#wf') format('svg');}
 
 #container {
 	height: 550px;
@@ -14,6 +15,9 @@
 	h3 {
 		margin: 0;
 		margin-bottom: 16px;
+		text-transform: uppercase;
+		color: #5f6062;
+		font-family: 'SoinSansPro-Roman';
 	}
 
 	#overlay {
@@ -124,6 +128,8 @@
 		}
 			.content p {
 				margin: 0;
+				color: #5f6062;
+				font-family: 'SoinSansPro-Roman';
 			}
 			.content-image {
 				position: relative;
@@ -134,7 +140,9 @@
 				display: inline-block;
 			}
 			.close {
-				color: red;
+				color: #f47321;
+				font-size: 20px;
+				text-decoration: none;
 				position: absolute;
 				top: 0;
 				right: 0; 
