@@ -111,7 +111,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"left":(marker_w / 2),"bottom":(marker_h + line1_h),"width":marker_w,"height":2,"z-index":50})
+				.css({"left":(marker_w / 2),"bottom":(marker_h + line1_h),"width":(marker_w * 4),"height":2,"z-index":50})
 				.show("slide",{ direction: "left" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -142,7 +142,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"right":(marker_w / 2),"bottom":(line1_h + marker_h),"width":marker_w,"height":2,"z-index":50})
+				.css({"right":(marker_w / 2),"bottom":(line1_h + marker_h),"width":(marker_w * 4),"height":2,"z-index":50})
 				.show("slide",{ direction: "right" },"slow", function(){
 
 					var line2_w = $(this).width();

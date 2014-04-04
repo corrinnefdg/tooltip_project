@@ -3,8 +3,9 @@
 
 
 #container {
-	height: 500px;
-	width: 500px;
+	height: 550px;
+	width: 1000px;
+	background-image: url('nora_bg.jpg');
 	border: 1px solid black;
 	overflow: none;
 	position: relative;
@@ -22,9 +23,9 @@
 	}
 
 	.marker {
-		height: 50px;
-		width: 50px;
-		background-color: green;
+		height: 25px;
+		width: 25px;
+		background-color: #f47321;
 		display: inline-block;
 		margin: 0;
 		padding: 0;
@@ -33,38 +34,38 @@
 	}
 		#section1 {
 			position: absolute;
-			top: 20px;
-			left: 20px;
+			bottom: 206px;
+			left: 79px;
 		}
 			#marker1 {
 				position: absolute;
-				top: 0;
-				left: 0;
+				bottom:0;
+				left:0;
 			}
 
 		#section2 {
 			position: absolute;
-			top: 20px;
-			right: 20px;
+			bottom: 57px;
+			left: 223px;
 		}
 			#marker2 {
 				position: absolute;
-				top: 0;
-				right: 0;
+				bottom:0;
+				left:0;
 			}
 
 		#section3 {
 			position: absolute;
-			bottom: 20px;
-			left: 20px;
+			right: 53px;
+			bottom: 76px;	
 		}
 			#marker3{
 				position: absolute;
+				right: 0;
 				bottom: 0;
-				left: 0;
 			}
 
-		#section4 {
+		/* #section4 {
 			position: absolute;
 			bottom: 20px;
 			right: 20px;
@@ -73,13 +74,13 @@
 				position: absolute;
 				bottom: 0;
 				right: 0;
-			}
+			} */
 
 
 
 		.line1 {
 			display: none;
-			background-color: blue;
+			background-color: #9fad9f;
 			/* width: 50px; */
 			/* height: 2px; */
 			margin: 0;
@@ -89,7 +90,7 @@
 		}
 		.line2 {
 			display: none;
-			background-color: red;
+			background-color: #9fad9f;
 			/* width: 2px; */
 			/* height: 50px; */
 			margin: 0;
@@ -99,8 +100,10 @@
 		}
 		.content {
 			display: none;
-			background-color: lightgray;
-			width: 300px;
+			background-color: #eae6df;
+			padding: 20px;
+			opacity: .8;
+			width: 260px;
 			margin: 0;
 			position: absolute;
 		}
@@ -109,4 +112,7 @@
 			}
 			.close {
 				color: red;
+				position: absolute;
+				top: 0;
+				right: 0; 
 			}
