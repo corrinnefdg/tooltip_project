@@ -11,6 +11,11 @@
 	position: relative;
 }
 
+	h3 {
+		margin: 0;
+		margin-bottom: 16px;
+	}
+
 	#overlay {
 		background: rgba(0,0,0,.5);
 		width:100%;
@@ -119,6 +124,14 @@
 		}
 			.content p {
 				margin: 0;
+			}
+			.content-image {
+				position: relative;
+				top: -20px;
+				left: -20px;
+				z-index: 50;
+				float: left;
+				display: inline-block;
 			}
 			.close {
 				color: red;
