@@ -1,6 +1,6 @@
 // JavaScript Document
 
-// http://jsbin.com/cokeb/15/edit
+// 
 $(document).ready(function(){
 
 	var last_quadrant = '';
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			// toggle lines and content opening/closing
 			// line1
 			$(this).next('.line1')
-			.css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2),"height":2,"z-index":50})
+			.css({"left":marker_w,"top":(marker_h / 2),"width":(content_w / 2),"height":2,"z-index":50,"margin-left":"20px"})
 			.show("slide",{ direction: "left" },"slow", function(){
 
 				var line1_w = $(this).width();
@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":marker_h,"width":2,"z-index":50})
+				.css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":(marker_h * 3),"width":2,"z-index":50,"margin-left":"20px"})
 				.show("slide",{ direction: "up" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 					// content
 					$(this).next('.content')
-					.css({"left":(marker_w),"top":((marker_h / 2) + line2_h),"z-index":50} )
+					.css({"left":(marker_w),"top":((marker_h / 2) + line2_h),"z-index":50,"margin-top":"20px"} )
 					.show("slide",{ direction: "up" },"slow")
 					.addClass("closeBox");
 				});
@@ -73,7 +73,7 @@ $(document).ready(function(){
 			// toggle lines and content opening/closing
 			// line1
 			$(this).next('.line1')
-			.css({"right":(marker_w),"top":(marker_h / 2),"width":(content_w / 2),"height":2,"z-index":50})
+			.css({"right":(marker_w),"top":(marker_h / 2),"width":(content_w / 2),"height":2,"z-index":50,"margin-right":"20px"})
 			.show("slide",{ direction: "right" },"slow", function(){
 
 				var line1_w = $(this).width();
@@ -81,7 +81,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"right":(marker_w + line1_w),"top":(marker_h / 2),"height":marker_h,"width":2,"z-index":50})
+				.css({"right":(marker_w + line1_w),"top":(marker_h / 2),"height":(marker_h * 3),"width":2,"z-index":50,"margin-right":"20px"})
 				.show("slide",{ direction: "up" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -89,7 +89,7 @@ $(document).ready(function(){
 
 					// content
 					$(this).next('.content')
-					.css({"right":(marker_w),"top":((marker_h / 2) + line2_h),"z-index":50})
+					.css({"right":(marker_w),"top":((marker_h / 2) + line2_h),"z-index":50,"margin-top":"20px"})
 					.show("slide",{ direction: "up" },"slow")
 					.addClass("closeBox");
 				});
@@ -104,14 +104,14 @@ $(document).ready(function(){
 			// toggle lines and content opening/closing
 			// line1
 			$(this).next('.line1')
-			.css({"left":(marker_w / 2),"bottom":(marker_h),"height":(content_h / 2),"width":2,"z-index":50})
+			.css({"left":(marker_w / 2),"bottom":(marker_h),"height":(content_h / 2),"width":2,"z-index":50,"margin-bottom":"20px"})
 			.show("slide",{ direction: "down" },"slow", function(){
 				var line1_w = $(this).width();
 				var line1_h = $(this).height();
 
 				// line2
 				$(this).next('.line2')
-				.css({"left":(marker_w / 2),"bottom":(marker_h + line1_h),"width":(marker_w * 4),"height":2,"z-index":50})
+				.css({"left":(marker_w / 2),"bottom":(marker_h + line1_h),"width":(marker_w * 4),"height":2,"z-index":50,"margin-bottom":"20px"})
 				.show("slide",{ direction: "left" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -119,7 +119,7 @@ $(document).ready(function(){
 
 					// content
 					$(this).next('.content')
-					.css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h),"z-index":50})
+					.css({"left":((marker_w / 2) + line2_w),"bottom":(marker_h),"z-index":50,"margin-left":"20px"})
 					.show("slide",{ direction: "left" },"slow")
 					.addClass("closeBox");
 				});
@@ -134,7 +134,7 @@ $(document).ready(function(){
 			// toggle lines and content opening/closing
 			// line1
 			$(this).next('.line1')
-			.css({"right":(marker_w / 2),"bottom":(marker_h),"height":(content_h / 2),"width":2,"z-index":50})
+			.css({"right":(marker_w / 2),"bottom":(marker_h),"height":(content_h / 2),"width":2,"z-index":50,"margin-bottom":"20px"})
 			.show("slide",{ direction: "down" },"slow", function(){
 
 				var line1_w = $(this).width();
@@ -142,7 +142,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"right":(marker_w / 2),"bottom":(line1_h + marker_h),"width":(marker_w * 4),"height":2,"z-index":50})
+				.css({"right":(marker_w / 2),"bottom":(line1_h + marker_h),"width":(marker_w * 4),"height":2,"z-index":50,"margin-bottom":"20px"})
 				.show("slide",{ direction: "right" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -150,7 +150,7 @@ $(document).ready(function(){
 
 					// content
 					$(this).next('.content')
-					.css({"right":((marker_w / 2) + line2_w),"bottom":(marker_h),"z-index":50} )
+					.css({"right":((marker_w / 2) + line2_w),"bottom":(marker_h),"z-index":50,"margin-right":"20px"} )
 					.show("slide",{ direction: "right" },"slow")
 					.addClass("closeBox");
 				});
