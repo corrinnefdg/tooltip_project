@@ -1,6 +1,5 @@
 // JavaScript Document
 
-// 
 $(document).ready(function(){
 
 	var last_quadrant = '';
@@ -23,10 +22,7 @@ $(document).ready(function(){
 
 		// get height and width of marker for lines to be centered
 		var marker_h = $(this).parent().height(); // parent height to center with border added
-		var marker_hh = marker_h / 2;
-
 		var marker_w = $(this).parent().width(); // parent width to center with border added
-		var marker_hw = marker_w / 2;
 
 		// close any content boxes already open
 		if ($(this).hasClass('active')) return;
@@ -52,7 +48,7 @@ $(document).ready(function(){
 
 				// line2
 				$(this).next('.line2')
-				.css({"left":(marker_w + line1_w -2),"top":(marker_h / 2),"height":(marker_h * 3),"width":1,"margin-left":"20px"})
+				.css({"left":(marker_w + line1_w),"top":(marker_h / 2),"height":(marker_h * 3),"width":1,"margin-left":"20px"})
 				.show("slide",{ direction: "up" },"slow", function(){
 
 					var line2_w = $(this).width();
@@ -165,14 +161,14 @@ $(document).ready(function(){
 	$('.close').click(function(e){
 		e.preventDefault();
 
-		$('#overlay').fadeOut();
-
 		close_last_popup();
 
-		$('.active').removeClass('active');
-		$("#container").children('#overlay').fadeOut();
-		
-		$('.marker-background').removeClass('transparent');
+		$('.active').removeClass('active');		
+		$('#overlay').delay(900).fadeOut();	
+			
+		setTimeout(function(){
+		   $('.marker-background').removeClass('transparent');
+	   }, 900);
 	});
 	
 	
@@ -180,22 +176,20 @@ $(document).ready(function(){
 	$('#overlay').click(function(e){
 		e.preventDefault();
 
-		$('#overlay').fadeOut();
-
 		close_last_popup();
 
 		$('.active').removeClass('active');
-		$("#container").children('#overlay').fadeOut();
-		
-		$('.marker-background').removeClass('transparent');
+		$('#overlay').delay(900).fadeOut();		
+
+		setTimeout(function(){
+		   $('.marker-background').removeClass('transparent');
+	   }, 900);
 	});
 
 
 	// close content box and lines in reverse order when closed
-	function close_last_popup()
-	{
-		switch(last_quadrant)
-		{
+	function close_last_popup(){
+		switch(last_quadrant){
 			case 'top left':
 				$('.closeBox').hide('slide',{direction: 'up'},function(){
 					$(this).prev().hide('slide',{direction:'up'},function(){
