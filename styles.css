@@ -3,147 +3,33 @@
 
 @font-face {font-family: 'SoinSansPro-Roman';src: url('fonts/2A5729_3_0.eot');src: url('fonts/2A5729_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/2A5729_3_0.woff') format('woff'),url('fonts/2A5729_3_0.ttf') format('truetype'),url('fonts/2A5729_3_0.svg#wf') format('svg');}
 
-#container {
-	height: 550px;
-	width: 1000px;
-	background-image: url('nora_bg.jpg');
-	border: 1px solid black;
-	overflow: none;
-	position: relative;
-}
+#container { height: 550px; width: 1000px; background-image: url('nora_bg.jpg'); border: 1px solid black; overflow: none; position: relative; }
 
-	h3 {
-		margin: 0;
-		margin-bottom: 16px;
-		text-transform: uppercase;
-		color: #5f6062;
-		font-family: 'SoinSansPro-Roman';
-	}
+#overlay { background: rgba(0,0,0,.5); width:100%; height:100%; position:absolute; top:0; left:0; display:none; z-index:9; }
 
-	#overlay {
-		background: rgba(0,0,0,.5);
-		width:100%;
-		height:100%;
-		position:absolute;
-		top:0;
-		left:0;
-		display:none;
-		z-index: 9;
-	}
+.marker { height:15px; width:15px; background-color:#f47321; display:inline-block; margin:2px; padding:0; font-size:0; z-index: 999; position:absolute; border-radius:2px; }
 
-	.marker {
-		height: 26px;
-		width: 26px;
-		background-color: #f47321;
-		display: inline-block;
-		margin: 0;
-		padding: 0;
-		font-size: 0;
-		z-index: 50;
-	}
-		#section1 {
-			position: absolute;
-			bottom: 206px;
-			left: 79px;
-		}
-			#marker1 {
-				position: absolute;
-				bottom:0;
-				left:0;
-			}
+.marker-section { position:absolute; border:2px solid #f47321; border-radius:3px; height:19px; width:19px; z-index:999; } 
 
-		#section2 {
-			position: absolute;
-			bottom: 57px;
-			left: 223px;
-		}
-			#marker2 {
-				position: absolute;
-				bottom:0;
-				left:0;
-			}
+#section1 { bottom: 208px; left: 79px; }
+	#marker1 { bottom:0; left:0; }
 
-		#section3 {
-			position: absolute;
-			right: 53px;
-			bottom: 76px;	
-		}
-			#marker3{
-				position: absolute;
-				right: 0;
-				bottom: 0;
-			}
+#section2 { bottom: 57px; left: 223px; }
+	#marker2 { bottom:0; left:0; }
 
-		#section4 {
-			position: absolute;
-			top: 20px;
-			left: 20px;
-		}
-			#marker4{
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
+#section3 {right: 52px; bottom: 76px; }
+	#marker3{ bottom: 0; right: 0; }
 
-        #section5 {
-			position: absolute;
-			top: 20px;
-			right: 20px;
-		}
-			#marker5 {
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
+#section4 {top: 20px; left: 20px; }
+	#marker4 { top: 0; left: 0; }
 
+#section5 { top: 20px; right: 20px; }
+	#marker5 { top: 0; right: 0; }
 
+.line1, .line2 { display: none; background-color: #9fad9f; padding: 0; position: absolute; font-size: 0; z-index:50; }
 
-		.line1 {
-			display: none;
-			background-color: #9fad9f;
-			/* width: 50px; */
-			/* height: 2px; */
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			font-size: 0;
-		}
-		.line2 {
-			display: none;
-			background-color: #9fad9f;
-			/* width: 2px; */
-			/* height: 50px; */
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			font-size: 0;
-		}
-		.content {
-			display: none;
-			background-color: #eae6df;
-			padding: 20px;
-			opacity: .8;
-			width: 260px;
-			position: absolute;
-		}
-			.content p {
-				margin: 0;
-				color: #5f6062;
-				font-family: 'SoinSansPro-Roman';
-			}
-			.content-image {
-				position: relative;
-				top: -20px;
-				left: -20px;
-				z-index: 50;
-				float: left;
-				display: inline-block;
-			}
-			.close {
-				color: #f47321;
-				font-size: 20px;
-				text-decoration: none;
-				position: absolute;
-				top: 0;
-				right: 0; 
-			}
+.content { display: none; background: rgba(234,230,223,.8); padding: 20px; width: 260px; position: absolute; z-index:50; }
+	h3 { margin: 0; margin-bottom: 16px; text-transform: uppercase; color: #5f6062; font-family: 'SoinSansPro-Roman'; }
+	.content p { margin: 0; color: #5f6062; font-family: 'SoinSansPro-Roman'; }
+	.content-image { position: relative; top: -20px; left: -20px; z-index: 50; float: left; display: inline-block; }
+	.close { color: #f47321; font-size: 20px; text-decoration: none; position: absolute; top: 0; right: 0;  }
