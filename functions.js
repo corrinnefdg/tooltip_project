@@ -6,7 +6,11 @@ $(document).ready(function(){
 	var last_quadrant = '';
 
 	// on click, display line1, line2, then content box
-	$('.marker').click(function(){
+	$('.marker-border').click(function(){
+		
+		// want to fade out the parent (marker-background), but not the children (marker and marker-border)
+		$('.marker-background').addClass('transparent');
+		
 		// finding location of this marker (four quadrants to determine where popup goes)
 		var marker_pos = $(this).parent().position();
 
@@ -36,7 +40,6 @@ $(document).ready(function(){
 
 		// top left quadrant
 		if( (marker_pos.left < container_hw) && (marker_pos.top < container_hh) ){
-			console.log("top left");
 
 			// toggle lines and content opening/closing
 			// line1
@@ -67,7 +70,6 @@ $(document).ready(function(){
 
 		// top right quadrant
 		if( (marker_pos.left > container_hw) && (marker_pos.top < container_hh) ){
-			console.log("top right");
 
 			// toggle lines and content opening/closing
 			// line1
@@ -98,7 +100,6 @@ $(document).ready(function(){
 
 		// bottom left quadrant
 		if( (marker_pos.left < container_hw) && (marker_pos.top > container_hh) ){
-			console.log("bottom left");
 
 			// toggle lines and content opening/closing
 			// line1
@@ -128,7 +129,6 @@ $(document).ready(function(){
 
 		// bottom right quadrant
 		if( (marker_pos.left > container_hw) && (marker_pos.top > container_hh) ){
-			console.log("bottom right");
 
 			// toggle lines and content opening/closing
 			// line1
@@ -171,6 +171,8 @@ $(document).ready(function(){
 
 		$('.active').removeClass('active');
 		$("#container").children('#overlay').fadeOut();
+		
+		$('.marker-background').removeClass('transparent');
 	});
 	
 	
@@ -184,6 +186,8 @@ $(document).ready(function(){
 
 		$('.active').removeClass('active');
 		$("#container").children('#overlay').fadeOut();
+		
+		$('.marker-background').removeClass('transparent');
 	});
 
 
